@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          lets learn Docker
+          Lets make a change to check if pipeline is triigered or not.
         </p>
         <a
           className="App-link"

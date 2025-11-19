@@ -3,10 +3,14 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [main]
+    types: [closed] # Trigger when a pull request is closed, which includes merges
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v3
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
